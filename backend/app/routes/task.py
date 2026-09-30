@@ -1,5 +1,7 @@
 from fastapi import APIRouter
 
+from backend.app.schema.task import TaskCreate, TaskUpdate
+
 router = APIRouter(
     prefix="/tasks",
     tags=["Tasks"],
@@ -12,7 +14,7 @@ async def get_tasks():
 
 
 @router.post(path="")
-async def create_tasks():
+async def create_tasks(body: TaskCreate):
     pass
 
 
@@ -22,7 +24,7 @@ async def get_task(id: int):
 
 
 @router.put(path="/{id}")
-async def update_task(id: int):
+async def update_task(id: int, body: TaskUpdate):
     pass
 
 
