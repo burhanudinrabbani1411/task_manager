@@ -6,5 +6,5 @@ class TaskCreate(SQLModel):
 
 
 class TaskUpdate(SQLModel):
-    name: str = Field(max_length=100, min_length=1)
+    name: str | None = Field(default=None, max_length=100, min_length=1)
     status: bool | None = None
